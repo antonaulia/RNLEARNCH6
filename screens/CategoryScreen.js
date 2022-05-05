@@ -4,9 +4,9 @@ import CategoryTile from "../components/CategoryTile";
 
 function CategoryScreen(props) {
   function renderItemComponent(itemData) {
-
+    const catID = itemData.item.id
     function categoryChoosenHandler(){
-        props.navigation.navigate('MealScreen')
+        props.navigation.navigate('MealScreen', {catID : catID})
     }
     return (
       <CategoryTile title={itemData.item.title} color={itemData.item.color} onPress={categoryChoosenHandler} />
